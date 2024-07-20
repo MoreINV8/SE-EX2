@@ -1,4 +1,10 @@
-public class GumballMachine {
+package gumball;
+
+/**
+ * @author 6510450305 chaiyapat
+ */
+
+public class GumballMachineOld {
         private enum State {
             NoQuarter,
             HasQuarter,
@@ -11,7 +17,7 @@ public class GumballMachine {
         private State state;
 
 
-        public GumballMachine(int gumballs) {
+        public GumballMachineOld(int gumballs) {
             this.gumballs = gumballs;
             this.state = State.NoQuarter;
         }
@@ -77,7 +83,3 @@ public class GumballMachine {
             System.out.println();
         }
 }
-
-/**
- * @author 6510450305 chaiyapat
- */

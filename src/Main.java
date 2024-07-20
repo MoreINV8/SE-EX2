@@ -1,3 +1,9 @@
+import gumball.GumballMachine;
+
+/**
+ * @author 6510450305 chaiyapat
+ */
+
 public class Main {
     public static void main(String[] args) {
         GumballMachine mightyGumball = new GumballMachine(5);
@@ -33,7 +39,3 @@ public class Main {
         mightyGumball.report();
     }
 }
-
-/**
- * @author 6510450305 chaiyapat
- */
