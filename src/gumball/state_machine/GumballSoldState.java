@@ -3,7 +3,7 @@ package gumball.state_machine;
 import gumball.GumballMachine;
 
 public class GumballSoldState implements State {
-    private GumballMachine gumballMachine;
+    protected GumballMachine gumballMachine;
 
     public GumballSoldState(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;
