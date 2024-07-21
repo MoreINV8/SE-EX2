@@ -34,4 +34,9 @@ public class GumballSoldState implements State {
             gumballMachine.setState(gumballMachine.getSoldOutState());
         }
     }
+
+    @Override
+    public void choose(String flavor) {
+        System.out.println("Sorry, you already turned the crank");
+    }
 }

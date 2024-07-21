@@ -28,4 +28,9 @@ public class OutOfGumballState implements State {
     public void dispense() {
         System.out.println("No gumball dispensed");
     }
+
+    @Override
+    public void choose(String flavor) {
+
+    }
 }

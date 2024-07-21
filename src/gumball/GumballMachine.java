@@ -11,9 +11,11 @@ public class GumballMachine {
     private State hasQuarterState;
     private State soldOutState;
     private State winnerState;
+    private State chooseFlavorState;
 
     private int gumballs;
     private State state;
+    private String flavor;
 
     public GumballMachine(int gumballs) {
         this.gumballs = gumballs;
@@ -22,6 +24,7 @@ public class GumballMachine {
         hasQuarterState = new HasQuarterState(this);
         soldOutState = new OutOfGumballState(this);
         winnerState = new WinnerState(this);
+        chooseFlavorState = new ChooseFlavorState(this);
 
         if (gumballs > 0) {
             state = noQuarterState;
@@ -47,10 +50,14 @@ public class GumballMachine {
     }
 
     public void releaseBall() {
-        System.out.println("A gumball comes rolling out the slot...");
+        System.out.println("A " + flavor + " gumball comes rolling out the slot...");
         if (gumballs > 0) {
             gumballs -= 1;
         }
+    }
+
+    public  void choose(String flavor) {
+        state.choose(flavor);
     }
 
     public State getSoldState() {
@@ -73,12 +80,20 @@ public class GumballMachine {
         return winnerState;
     }
 
+    public State getChooseFlavorState() {
+        return chooseFlavorState;
+    }
+
     public int getGumballs() {
         return gumballs;
     }
 
     public void setState(State state) {
         this.state = state;
+    }
+
+    public void setFlavor(String flavor) {
+        this.flavor = flavor;
     }
 
     public void report() {

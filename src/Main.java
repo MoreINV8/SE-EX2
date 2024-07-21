@@ -9,6 +9,7 @@ public class Main {
         GumballMachine mightyGumball = new GumballMachine(5);
         mightyGumball.report();
         mightyGumball.insertQuarter();
+        mightyGumball.choose("Mango");
         mightyGumball.turn();
         System.out.println();
 
@@ -20,18 +21,24 @@ public class Main {
 
         mightyGumball.report();
         mightyGumball.insertQuarter();
+        mightyGumball.choose("Orange");
         mightyGumball.turn();
         mightyGumball.insertQuarter();
+        mightyGumball.choose("Mango");
+        mightyGumball.choose("Orange");
         mightyGumball.turn();
         mightyGumball.turn();
         System.out.println();
 
         mightyGumball.report();
         mightyGumball.insertQuarter();
+        mightyGumball.choose("Banana");
         mightyGumball.turn();
         mightyGumball.insertQuarter();
+        mightyGumball.choose("Peach");
         mightyGumball.turn();
         mightyGumball.insertQuarter();
+        mightyGumball.choose("Chocolate");
         mightyGumball.turn();
 
         System.out.println();

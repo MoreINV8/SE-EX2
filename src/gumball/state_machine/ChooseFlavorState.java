@@ -1,12 +1,17 @@
 package gumball.state_machine;
+
 import gumball.GumballMachine;
 
 import java.util.Random;
 
-public class HasQuarterState implements State {
+public class ChooseFlavorState implements State {
     private GumballMachine gumballMachine;
+    private String favor;
 
-    public HasQuarterState(GumballMachine gumballMachine) {
+    private final Random random = new Random();
+    private final double winningRate = 0.1;
+
+    public ChooseFlavorState(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;
     }
 
@@ -17,14 +22,19 @@ public class HasQuarterState implements State {
 
     @Override
     public void ejectQuarter() {
-        System.out.println("Quarter returned");
-        gumballMachine.setState(gumballMachine.getNoQuarterState());
+        System.out.println("Sorry, you already choose the flavor");
     }
 
     @Override
     public void turnCrank() {
-        System.out.println("You have to choose the flavor first");
-        System.out.println("No gumball dispensed");
+        System.out.println("You turned...");
+        double result = random.nextDouble(0, 1);
+        System.out.println(result);
+        if (result < winningRate) {
+            gumballMachine.setState(gumballMachine.getWinnerState());
+        } else {
+            gumballMachine.setState(gumballMachine.getSoldState());
+        }
     }
 
     @Override
@@ -36,6 +46,5 @@ public class HasQuarterState implements State {
     public void choose(String flavor) {
         System.out.println("You have chosen the flavor " + flavor);
         gumballMachine.setFlavor(flavor);
-        gumballMachine.setState(gumballMachine.getChooseFlavorState());
     }
 }
