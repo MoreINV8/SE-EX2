@@ -2,6 +2,14 @@ import gumball.GumballMachine;
 
 /**
  * @author 6510450305 chaiyapat
+ * advantage and disadvantage of using design pattern and not using design pattern
+ *
+ * using design pattern: ดีตรงที่มีการแบ่งส่วนการทำงานออกเป็น state machine ทำให้เข้าใจและอ่านได้ง่าย
+ * แต่ในกรณีที่จะเพิ่ม transition จำเป็นต้องตามไปแก้ไขโค้ดในทุกๆ state machine
+ * การเพิ่ม state ไม่จำเป็นต้องเข้าไปยุ่งกับ code ของ state อื่นๆ
+ *
+ * not using design pattern: เป็นการ code ที่ง่ายไม่ต้องคิดเยอะในกรณีที่่มี state machine ไม่มาก
+ * แต่เมื่อจะเพิ่ม transition และ state machine เพิ่มต้องเข้าไปแก้ code ในส่วนรวม (เพราะทุก code อยู่รวมกัน)
  */
 
 public class Main {
