@@ -4,6 +4,10 @@ import gumball.GumballMachine;
 
 import java.util.Random;
 
+/**
+ * @author 6510450305 chaiyapat
+ */
+
 public class ChooseFlavorState implements State {
     private GumballMachine gumballMachine;
     private String favor;

@@ -2,6 +2,10 @@ package gumball.state_machine;
 
 import gumball.GumballMachine;
 
+/**
+ * @author 6510450305 chaiyapat
+ */
+
 public class WinnerState extends GumballSoldState{
     public WinnerState(GumballMachine gumballMachine) {
         super(gumballMachine);

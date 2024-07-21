@@ -1,7 +1,9 @@
 package gumball.state_machine;
 import gumball.GumballMachine;
 
-import java.util.Random;
+/**
+ * @author 6510450305 chaiyapat
+ */
 
 public class HasQuarterState implements State {
     private GumballMachine gumballMachine;
